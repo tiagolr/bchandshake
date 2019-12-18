@@ -1,0 +1,40 @@
+{
+  "name": "bchandshake",
+  "version": "0.1.2",
+  "description": "Establish a shared secret between two parties using ECDH over bitcoin",
+  "main": "index.js",
+  "author": "tlr",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "mocha --timeout 60000",
+    "build": "browserify index.js --s bchandshake > dist/bchandshake.js && uglifyjs dist/bchandshake.js > dist/bchandshake.min.js"
+  },
+  "keywords": [
+    "bsv",
+    "bitcoin",
+    "blockchain",
+    "cryptocurrency",
+    "cryptography",
+    "diffie–hellman",
+    "elliptic-curve",
+    "ecdh"
+  ],
+  "license": "MIT",
+  "unpkg": "dist/bchandshake.min.js",
+  "dependencies": {
+    "bcevents": "^0.1.3",
+    "browser-crypto": "^1.0.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "mocha": "^6.2.2",
+    "uglify-es": "^3.3.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiagolr/bchandshake.git"
+  },
+  "browser": {
+    "crypto": "browser-crypto"
+  }
+}
